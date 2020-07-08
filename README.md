@@ -8,7 +8,7 @@ users to track how much money have they spent.
 **add 2017-04-25 12 USD Jogurt** — adds expense entry to the list of user expenses.
 Expenses for various dates could be added in any order.
 
-### Command accepts following parameters:
+Command accepts following parameters:
 - 2017-04-25 — is the date when expense occurred<
 - 12 — is an amount of money spent
 - USD — the currency in which expense occurred
