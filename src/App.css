@@ -3,27 +3,15 @@
 }
 
 .app__content {
-  background-color: #282c34;
+  background-color: #ececec;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 30px;
 }
 
-.app__input {
-  width: 350px;
-  padding: 10px 10px;
-  margin-right: 20px;
-}
 
-.app__input:focus {
-  box-shadow: 0 0 15px rgb(97, 218, 251);
-}
-
-.app__button {
-  padding: 10px 40px;
-  cursor: pointer;
-}

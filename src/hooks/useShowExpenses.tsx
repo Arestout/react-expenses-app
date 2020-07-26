@@ -21,10 +21,8 @@ export const useShowExpenses = () => {
   );
 
   const expensesByDate = useSelector(selectExpensesByDate);
-  const showExpenses = useSelector((state: RootState) => state.showExpenses);
 
   return {
-    showExpenses,
     expensesByDate,
   };
 };

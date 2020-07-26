@@ -6,19 +6,10 @@ import { hasOwnProperty } from '../utils';
 export type CalculateTotal = {
   totalAmount: string;
   baseCurrency: string;
-  showTotalAmount: boolean;
-  errorMessage: string;
-  isLoading: boolean;
 };
 
 export const useCalculateTotal = (): CalculateTotal => {
-  const {
-    rates,
-    expenses,
-    showTotalAmount,
-    isLoading,
-    errorMessage,
-  } = useSelector((state: RootState) => state);
+  const { rates, expenses } = useSelector((state: RootState) => state);
 
   const baseCurrency = rates.base || '';
 
@@ -41,8 +32,5 @@ export const useCalculateTotal = (): CalculateTotal => {
   return {
     totalAmount,
     baseCurrency,
-    showTotalAmount,
-    errorMessage,
-    isLoading,
   };
 };

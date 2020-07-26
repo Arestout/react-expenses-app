@@ -31,7 +31,7 @@ export type ShowErrorAction = {
 export const ADD_NEW_EXPENSE = 'ADD_NEW_EXPENSE';
 export type AddNewExpense = {
   type: typeof ADD_NEW_EXPENSE;
-  payload: string;
+  payload: Expense;
 };
 
 export const CLEAR_EXPENSE_BY_DATE = 'CLEAR_EXPENSE_BY_DATE';
@@ -40,20 +40,10 @@ export type clearExpenseByDate = {
   payload: string;
 };
 
-export const SHOW_EXPENSES = 'SHOW_EXPENSES';
-export type listAllExpenses = {
-  type: typeof SHOW_EXPENSES;
-};
-
 export const UPDATE_RATES = 'UPDATE_RATES';
 export type updateCurrencyRates = {
   type: typeof UPDATE_RATES;
   payload: Rates;
-};
-
-export const SHOW_TOTAL_AMOUNT = 'SHOW_TOTAL_AMOUNT';
-export type showTotalAmount = {
-  type: typeof SHOW_TOTAL_AMOUNT;
 };
 
 export type AppActionTypes =
@@ -62,6 +52,4 @@ export type AppActionTypes =
   | ShowErrorAction
   | AddNewExpense
   | clearExpenseByDate
-  | listAllExpenses
-  | updateCurrencyRates
-  | showTotalAmount;
+  | updateCurrencyRates;

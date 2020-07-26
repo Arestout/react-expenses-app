@@ -20,10 +20,10 @@ export function showError(text: string): types.AppActionTypes {
   };
 }
 
-export function addNewExpense(text: string): types.AppActionTypes {
+export function addNewExpense(data: types.Expense): types.AppActionTypes {
   return {
     type: types.ADD_NEW_EXPENSE,
-    payload: text,
+    payload: data,
   };
 }
 
@@ -34,12 +34,6 @@ export function clearExpenseByDate(text: string): types.AppActionTypes {
   };
 }
 
-export function listAllExpenses(): types.AppActionTypes {
-  return {
-    type: types.SHOW_EXPENSES,
-  };
-}
-
 export function updateCurrencyRates(rates: types.Rates): types.AppActionTypes {
   return {
     type: types.UPDATE_RATES,
@@ -47,16 +41,10 @@ export function updateCurrencyRates(rates: types.Rates): types.AppActionTypes {
   };
 }
 
-export function showTotalAmount(): types.AppActionTypes {
-  return {
-    type: types.SHOW_TOTAL_AMOUNT,
-  };
-}
-
 export const fetchCurrencyRates = (inputData: string) => async (
   dispatch: Function
 ) => {
-  const baseCurrency = inputData.split(' ')[1];
+  const baseCurrency = inputData;
   dispatch(showLoader());
   dispatch(showError(''));
   await api
@@ -72,5 +60,4 @@ export const fetchCurrencyRates = (inputData: string) => async (
       console.log(error);
     });
   dispatch(hideLoader());
-  dispatch(showTotalAmount());
 };
